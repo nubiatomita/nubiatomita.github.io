@@ -6,72 +6,273 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      margin: 0;
-      padding: 40px;
-      background: #ffffff;
-      color: #000000;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
+    :root {
+      --bg: #0a1020;
+      --card: rgba(15, 23, 42, 0.65);
+      --border: rgba(255,255,255,0.08);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+
+      --btn: #1e40af;
+      --btn-hover: #1d4ed8;
+
+      --tag-bg: rgba(255,255,255,0.06);
     }
 
-    .container {
-      max-width: 520px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      background: radial-gradient(1200px 600px at 20% 0%, #111827, var(--bg));
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter",
+                   "Segoe UI", Roboto, sans-serif;
+      line-height: 1.55;
+    }
+
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 14px;
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .lang-toggle button.active {
+      color: white;
+      border-color: white;
+    }
+
+    .card {
+      background: linear-gradient(
+                  180deg,
+                  rgba(255,255,255,0.06),
+                  rgba(255,255,255,0.02)
+                ),
+                var(--card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px 22px;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+    }
+
+    .location {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
 
     h1 {
-      font-size: 14px;
+      font-size: 28px;
       font-weight: 600;
       margin: 0 0 6px 0;
     }
 
-    p {
-      margin: 0 0 16px 0;
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
     }
 
-    .subtitle {
+    .headline {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 24px;
     }
 
-    a {
-      color: #000;
+    .tag {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      font-size: 12px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .action {
+      padding: 16px 18px;
+      background: linear-gradient(
+                    180deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.02)
+                  ),
+                  var(--btn);
+      border-radius: 14px;
       text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: transform 0.15s ease, background 0.15s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .action span {
+      display: block;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 400;
+      margin-top: 2px;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .action:hover {
+      background: var(--btn-hover);
+      transform: translateY(-1px);
     }
 
-    li {
-      margin-bottom: 6px;
+    .section-title {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 14px;
+      max-width: 720px;
+    }
+
+    /* Desktop refinement */
+    @media (min-width: 768px) {
+      body {
+        padding: 40px 24px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .card {
+        padding: 36px;
+      }
+
+      .actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrapper">
 
-    <h1>Nubia Tomita</h1>
+    <div class="topbar">
+      <div class="lang-toggle">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
 
-    <p class="subtitle">
-      Consulting · SaaS · Digital Transformation · Data Analysis
-    </p>
+    <div class="card">
 
-    <ul>
-      <li><a href="cv.pdf">CV</a></li>
-      <li><a href="https://www.linkedin.com/missnubia">LinkedIn</a></li>
-      <li><a href="https://github.com/">GitHub</a></li>
-      <li><a href="nubiatomita@gmail.com">Email</a></li>
-    </ul>
+      <div class="location">Paris</div>
 
+      <h1>Nubia Tomita</h1>
+      <div class="subtitle" data-en="Consulting · SaaS · Digital Transformation"
+           data-fr="Conseil · SaaS · Transformation digitale">
+        Consulting · SaaS · Digital Transformation
+      </div>
+
+      <div class="headline"
+           data-en="Industrial engineer working at the intersection of strategy, technology, and execution."
+           data-fr="Ingénieure industrielle à l’intersection de la stratégie, de la technologie et de l’exécution.">
+        Industrial engineer working at the intersection of strategy, technology, and execution.
+      </div>
+
+      <div class="tags">
+        <div class="tag">SaaS</div>
+        <div class="tag">Customer Success</div>
+        <div class="tag" data-en="Change Management" data-fr="Conduite du changement">
+          Change Management
+        </div>
+        <div class="tag">Data & Ops</div>
+        <div class="tag">AI-enabled products</div>
+      </div>
+
+      <div class="actions">
+        <a class="action" href="https://www.linkedin.com/">
+          LinkedIn
+          <span data-en="Connect with me" data-fr="Se connecter">Connect with me</span>
+        </a>
+
+        <a class="action" href="mailto:your@email.com">
+          Email
+          <span data-en="Send a message" data-fr="Envoyer un message">Send a message</span>
+        </a>
+
+        <a class="action" href="cv.pdf">
+          CV
+          <span data-en="Download resume" data-fr="Télécharger le CV">Download resume</span>
+        </a>
+
+        <a class="action" href="#">
+          Call
+          <span data-en="Schedule a meeting" data-fr="Prendre rendez-vous">Schedule a meeting</span>
+        </a>
+      </div>
+
+      <div class="section-title"
+           data-en="What I do"
+           data-fr="Ce que je fais">
+        What I do
+      </div>
+
+      <div class="description"
+           data-en="I support consulting and SaaS initiatives across product onboarding, operations, and digital transformation, with a strong focus on execution and impact."
+           data-fr="J’accompagne des projets de conseil et SaaS, de l’onboarding produit à la transformation digitale, avec un fort focus sur l’exécution et l’impact.">
+        I support consulting and SaaS initiatives across product onboarding, operations, and digital transformation, with a strong focus on execution and impact.
+      </div>
+
+    </div>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    }
+  </script>
 </body>
 </html>
+
