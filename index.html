@@ -13,8 +13,9 @@
       --text: #e5e7eb;
       --muted: #9ca3af;
 
-      --btn: #1e40af;
-      --btn-hover: #1d4ed8;
+      /* Subtle blue buttons */
+      --btn: #1b2d5c;
+      --btn-hover: #1e40af;
 
       --tag-bg: rgba(255,255,255,0.06);
     }
@@ -104,6 +105,11 @@
       margin-bottom: 20px;
     }
 
+    .headline a {
+      color: #3b82f6;
+      text-decoration: underline;
+    }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -167,7 +173,6 @@
       max-width: 720px;
     }
 
-    /* Desktop refinement */
     @media (min-width: 768px) {
       body {
         padding: 40px 24px;
@@ -203,15 +208,15 @@
       <div class="location">Paris</div>
 
       <h1>Nubia Tomita</h1>
-      <div class="subtitle" data-en="Consulting · SaaS · Digital Transformation"
-           data-fr="Conseil · SaaS · Transformation digitale">
-        Consulting · SaaS · Digital Transformation
+      <div class="subtitle" data-en="Consulting · SaaS · Digital Transformation · Data Analysis"
+           data-fr="Conseil · SaaS · Transformation digitale · Analyse de données">
+        Consulting · SaaS · Digital Transformation · Data Analysis
       </div>
 
       <div class="headline"
-           data-en="Industrial engineer working at the intersection of strategy, technology, and execution."
-           data-fr="Ingénieure industrielle à l’intersection de la stratégie, de la technologie et de l’exécution.">
-        Industrial engineer working at the intersection of strategy, technology, and execution.
+           data-en='Industrial engineer (Purdue University <a href="https://www.purdue.edu" target="_blank">BS</a> · Politecnico di Milano <a href="https://www.polimi.it/en/" target="_blank">exchange</a>) working at the intersection of strategy, technology, and execution.'
+           data-fr='Ingénieure industrielle (Purdue University <a href="https://www.purdue.edu" target="_blank">BS</a> · Politecnico di Milano <a href="https://www.polimi.it/en/" target="_blank">échange</a>) à l’intersection de la stratégie, de la technologie et de l’exécution.'>
+        Industrial engineer (Purdue University <a href="https://www.purdue.edu" target="_blank">BS</a> · Politecnico di Milano <a href="https://www.polimi.it/en/" target="_blank">exchange</a>) working at the intersection of strategy, technology, and execution.
       </div>
 
       <div class="tags">
@@ -222,25 +227,26 @@
         </div>
         <div class="tag">Data & Ops</div>
         <div class="tag">AI-enabled products</div>
+        <div class="tag">Data Analysis</div>
       </div>
 
       <div class="actions">
-        <a class="action" href="https://www.linkedin.com/missnubia">
+        <a class="action" href="https://www.linkedin.com/missnubia" target="_blank">
           LinkedIn
           <span data-en="Connect with me" data-fr="Se connecter">Connect with me</span>
         </a>
 
-        <a class="action" href="nubiatomita@gmail.com">
+        <a class="action" href="mailto:nubiatomita@gmail.com">
           Email
           <span data-en="Send a message" data-fr="Envoyer un message">Send a message</span>
         </a>
 
-        <a class="action" href="cv.pdf">
+        <a class="action" href="cv.pdf" target="_blank">
           CV
           <span data-en="Download resume" data-fr="Télécharger le CV">Download resume</span>
         </a>
 
-        <a class="action" href="#">
+        <a class="action" href="tel:+33123456789">
           Call
           <span data-en="Schedule a meeting" data-fr="Prendre rendez-vous">Schedule a meeting</span>
         </a>
@@ -266,7 +272,7 @@
       document.documentElement.lang = lang;
 
       document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
+        el.innerHTML = el.getAttribute(`data-${lang}`);
       });
 
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
@@ -275,4 +281,3 @@
   </script>
 </body>
 </html>
-
