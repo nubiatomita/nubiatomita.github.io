@@ -7,7 +7,7 @@
 
 <style>
 :root {
-  --bg: #08142f; /* slightly more blue */
+  --bg: #08142f; 
   --bg-accent: #0b1f4a;
   --card: rgba(15, 23, 42, 0.7);
   --border: rgba(255,255,255,0.08);
@@ -23,8 +23,7 @@
 body {
   margin: 0;
   padding: 24px 16px;
-  background:
-    radial-gradient(1000px 600px at 15% 0%, var(--bg-accent), var(--bg));
+  background: radial-gradient(1000px 600px at 15% 0%, var(--bg-accent), var(--bg));
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
   line-height: 1.55;
@@ -85,7 +84,6 @@ h1 { margin: 8px 0; font-size: 32px; }
   margin-bottom: 10px;
 }
 
-/* EDUCATION — unchanged */
 .headline {
   font-size: 14px;
   margin: 14px auto 20px;
@@ -196,7 +194,6 @@ h1 { margin: 8px 0; font-size: 32px; }
 Consulting · SaaS · Digital Transformation · Data Analysis
 </div>
 
-<!-- EDUCATION KEPT EXACTLY -->
 <div class="headline"
 data-en='Education: Industrial Engineering in the USA: <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> and Italy: <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.'
 data-fr='Formation: Ingénierie industrielle aux États-Unis : <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> et en Italie : <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.'>
@@ -251,31 +248,106 @@ and Italy:
 </div>
 
 <script>
+let currentLang = "en"; // default language
+
 const content = {
-pelico:`<h2>Pelico – Customer Operations</h2><ul><li>SaaS onboarding for industrial clients</li><li>KPI dashboards & analytics</li></ul>`,
-brasa:`<h2>BRASA – Marketing Operations</h2><ul><li>Global ops & branding</li></ul>`,
-pepsico:`<h2>PepsiCo – Logistics Analysis</h2><p>SQL & Excel-based supply chain optimization</p>`,
-btg:`<h2>BTG Pactual</h2><p>Investment & credit market analysis</p>`,
-
-safran:`<h2>Safran</h2><p>Supply chain optimization reducing turnaround time by 40%</p>`,
-kpi:`<h2>KPI Analytics</h2><p>Data analysis for 9+ customers</p>`,
-arena:`<h2>Industry 4.0 Arena Simulation</h2><p>Performance improved from 750 → 468</p>`,
-purdue:`<h2>Purdue Engineering Computing</h2><p>Stock-market simulation game</p>`,
-mediaset:`<h2>Mediaset Innovation</h2><p>Platform & UX redesign</p>`,
-cad:`<h2>CAD Engineering</h2><p>AutoCAD · CATIA portfolio</p>`,
-iypt:`<h2>IYPT</h2><p>Team leader · National bronze medal</p>`
+  pelico: {
+    en: `<h2>Pelico — Customer Operations (B2B SaaS)</h2>
+         <p><em>Paris · 2024–2025 · Clients: Safran Aerospace, SAE, SEP, SED</em></p>
+         <ul>
+           <li>Led onboarding & implementation for industrial SaaS clients</li>
+           <li>Designed SQL & Excel dashboards for operational KPIs</li>
+           <li>Built multilingual documentation in Notion</li>
+           <li>Ran user workshops for operators and managers</li>
+           <li>Worked cross-functionally with Product & Data teams</li>
+         </ul>`,
+    fr: `<h2>Pelico — Customer Operations (SaaS B2B)</h2>
+         <p><em>Paris · 2024–2025 · Clients : Safran Aerospace, SAE, SEP, SED</em></p>
+         <ul>
+           <li>Onboarding et implémentation de clients industriels SaaS</li>
+           <li>Création de dashboards SQL & Excel pour les KPIs opérationnels</li>
+           <li>Documentation multilingue (Notion)</li>
+           <li>Animation d’ateliers utilisateurs</li>
+           <li>Collaboration avec les équipes Produit et Data</li>
+         </ul>`
+  },
+  brasa: {
+    en: `<h2>BRASA — Global Board, Marketing Operations</h2>
+         <p><em>Remote · 2023–2024</em></p>
+         <ul>
+           <li>Managed global projects with an international team</li>
+           <li>Drove branding and product positioning</li>
+         </ul>`,
+    fr: `<h2>BRASA — Conseil Global, Marketing & Ops</h2>
+         <p><em>Remote · 2023–2024</em></p>
+         <ul>
+           <li>Gestion de projets globaux avec une équipe internationale</li>
+           <li>Positionnement stratégique et branding</li>
+         </ul>`
+  },
+  pepsico: {
+    en: `<h2>PepsiCo — Data Analysis & Logistics Project</h2>
+         <p><em>USA · 2023</em></p>
+         <ul>
+           <li>Analyzed national supply chain data using SQL & Excel</li>
+           <li>Mapped operational processes and flows</li>
+           <li>Proposed decarbonization strategy for logistics fleet</li>
+         </ul>`,
+    fr: `<h2>PepsiCo — Analyse des données & logistique</h2>
+         <p><em>USA · 2023</em></p>
+         <ul>
+           <li>Analyse de la chaîne logistique nationale (SQL & Excel)</li>
+           <li>Cartographie des processus opérationnels</li>
+           <li>Proposition d’un plan de décarbonation pour la flotte logistique</li>
+         </ul>`
+  },
+  btg: {
+    en: `<h2>BTG Pactual — Summer Analyst</h2>
+         <p><em>Brazil · 2021–2022</em></p>
+         <ul>
+           <li>Analyzed financial markets and credit operations</li>
+           <li>Supported investment & risk analysis</li>
+           <li>Worked within Latin America’s largest investment bank</li>
+         </ul>`,
+    fr: `<h2>BTG Pactual — Summer Analyst</h2>
+         <p><em>Brésil · 2021–2022</em></p>
+         <ul>
+           <li>Analyse des marchés financiers et opérations de crédit</li>
+           <li>Support à l’investissement et analyse du risque</li>
+           <li>Travail au sein de la plus grande banque d’investissement d’Amérique Latine</li>
+         </ul>`
+  },
+  // Similarly add bilingual content for safra, kpi, arena, purdue, mediaset, cad, iypt
+  Safran: { en:`<h2>Safran — Supply Chain Optimization</h2><ul><li>Industrial supply chain use cases</li><li>Reduced turnaround time ~40%</li></ul>`, fr:`<h2>Safran — Optimisation de la chaîne logistique</h2><ul><li>Cas d’usage chaîne logistique industrielle</li><li>Réduction du temps de traitement ~40%</li></ul>` },
+KPIs: { en:`<h2>KPI Analytics Project</h2><ul><li>KPI dashboards for 9+ customers</li></ul>`, fr:`<h2>Projet KPI Analytics</h2><ul><li>Dashboards KPI pour 9+ clients</li></ul>` },
+  Arena: { en:`<h2>Industry 4.0 — Arena Simulation</h2><ul><li>Optimized performance 750→468</li></ul>`, fr:`<h2>Industry 4.0 — Simulation Arena</h2><ul><li>Optimisation performance 750→468</li></ul>` },
+  Purdue: { en:`<h2>Purdue Engineering Computing Project</h2><ul><li>Stock-market simulation game</li></ul>`, fr:`<h2>Projet Purdue Engineering Computing</h2><ul><li>Jeu de simulation boursière</li></ul>` },
+  Mediaset: { en:`<h2>Mediaset Innovation</h2><ul><li>Platform & UX redesign</li></ul>`, fr:`<h2>Innovation Mediaset</h2><ul><li>Refonte plateforme & UX</li></ul>` },
+  CAD: { en:`<h2>CAD Engineering</h2><ul><li>AutoCAD · CATIA portfolio</li></ul>`, fr:`<h2>Ingénierie CAO</h2><ul><li>Portfolio AutoCAD · CATIA</li></ul>` },
+  IYPT: { en:`<h2>IYPT — Team Leader</h2><ul><li>National bronze medal</li></ul>`, fr:`<h2>IYPT — Chef d’équipe</h2><ul><li>Médaille de bronze nationale</li></ul>` }
 };
 
-const modal=document.getElementById("project-modal");
-const modalText=document.getElementById("modal-text");
-document.querySelectorAll(".project-btn").forEach(b=>{
-b.onclick=()=>{
-modalText.innerHTML=content[b.dataset.project];
-modal.style.display="block";
-};
+const modal = document.getElementById("project-modal");
+const modalText = document.getElementById("modal-text");
+
+document.querySelectorAll(".project-btn").forEach(b => {
+  b.onclick = () => {
+    modalText.innerHTML = content[b.dataset.project][currentLang];
+    modal.style.display = "block";
+  };
 });
-document.querySelector(".close-btn").onclick=()=>modal.style.display="none";
-modal.onclick=e=>{if(e.target===modal)modal.style.display="none";}
+
+document.querySelector(".close-btn").onclick = () => modal.style.display = "none";
+modal.onclick = e => { if(e.target === modal) modal.style.display = "none"; };
+
+// Language toggle buttons
+document.querySelectorAll(".lang-toggle button").forEach(btn => {
+  btn.onclick = () => {
+    currentLang = btn.textContent.includes("FR") ? "fr" : "en";
+    document.querySelectorAll(".lang-toggle button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  };
+});
 </script>
 
 </div>
