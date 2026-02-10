@@ -250,82 +250,97 @@ and Italy:
 <script>
 let currentLang = "en"; // default language
 
+<script>
 const content = {
-  pelico: {
-    en: `<h2>Pelico — Customer Operations (B2B SaaS)</h2>
-         <p><em>Paris · 2024–2025 · Clients: Safran Aerospace, SAE, SEP, SED</em></p>
-         <ul>
-           <li>Led onboarding & implementation for industrial SaaS clients</li>
-           <li>Designed SQL & Excel dashboards for operational KPIs</li>
-           <li>Built multilingual documentation in Notion</li>
-           <li>Ran user workshops for operators and managers</li>
-           <li>Worked cross-functionally with Product & Data teams</li>
-         </ul>`,
-    fr: `<h2>Pelico — Customer Operations (SaaS B2B)</h2>
-         <p><em>Paris · 2024–2025 · Clients : Safran Aerospace, SAE, SEP, SED</em></p>
-         <ul>
-           <li>Onboarding et implémentation de clients industriels SaaS</li>
-           <li>Création de dashboards SQL & Excel pour les KPIs opérationnels</li>
-           <li>Documentation multilingue (Notion)</li>
-           <li>Animation d’ateliers utilisateurs</li>
-           <li>Collaboration avec les équipes Produit et Data</li>
-         </ul>`
+  "SaaS B2B Operations": {
+    en: `
+      <h2>Pelico — Client Onboarding & SaaS Operations</h2>
+      <ul>
+        <li><strong>Client Onboarding & Implementation:</strong> Supported onboarding of industrial clients, managing account setup, configuration, and personalized guidance; facilitated user workshops and adapted training paths for operators, supply chain managers, and executives.</li>
+        <li><strong>Content & Documentation:</strong> Built multilingual (EN/FR/ES) guides, video tutorials, and training materials; documented functional specifications and product workflows in Notion to enhance client enablement.</li>
+        <li><strong>Data Analysis & Reporting:</strong> Designed SQL and Excel dashboards to extract key operational KPIs, identify process bottlenecks, and improve visibility and decision-making across teams.</li>
+        <li><strong>Cross-Functional Collaboration & Continuous Improvement:</strong> Worked with Product, Data, and Customer Success teams to resolve client issues, boost retention and adoption, and propose data-driven process optimizations.</li>
+        <li><strong>Customer Support:</strong> Structured internal CRM and ticketing tool usage (HubSpot, Notion, Linear) and proposed optimizations to enhance data visibility and response times.</li>
+        <li><strong>Scalability:</strong> Provided functional support during critical deployment phases, contributed to automating implementation cycles, and improved internal efficiency through iterative process improvement.</li>
+      </ul>
+    `,
+    fr: `
+      <h2>Pelico — Onboarding Clients & Opérations SaaS</h2>
+      <ul>
+        <li><strong>Onboarding & Implémentation:</strong> Support de l’onboarding des clients industriels, gestion de la configuration des comptes et accompagnement personnalisé ; animation d’ateliers utilisateurs et adaptation des parcours pour opérateurs, managers supply chain et cadres.</li>
+        <li><strong>Documentation & Contenu:</strong> Création de guides, tutoriels vidéo et matériel de formation multilingues (EN/FR/ES) ; documentation des spécifications fonctionnelles et workflows produits dans Notion pour faciliter l’adoption client.</li>
+        <li><strong>Analyse & Reporting:</strong> Conception de dashboards SQL et Excel pour suivre les KPI opérationnels, identifier les goulots d’étranglement et améliorer la visibilité et la prise de décision.</li>
+        <li><strong>Collaboration Interfonctionnelle & Amélioration Continue:</strong> Travail avec les équipes Produit, Data et Customer Success pour résoudre les problèmes clients, améliorer la rétention et proposer des optimisations basées sur les données terrain.</li>
+        <li><strong>Support Client:</strong> Structuration des outils CRM et ticketing (HubSpot, Notion, Linear) et proposition d’optimisations pour améliorer la visibilité et la réactivité.</li>
+        <li><strong>Scalabilité:</strong> Support fonctionnel lors des déploiements critiques, contribution à l’automatisation des cycles d’implémentation et amélioration de l’efficacité interne par itérations.</li>
+      </ul>
+    `
   },
-  brasa: {
-    en: `<h2>BRASA — Global Board, Marketing Operations</h2>
-         <p><em>Remote · 2023–2024</em></p>
-         <ul>
-           <li>Managed global projects with an international team</li>
-           <li>Drove branding and product positioning</li>
-         </ul>`,
-    fr: `<h2>BRASA — Conseil Global, Marketing & Ops</h2>
-         <p><em>Remote · 2023–2024</em></p>
-         <ul>
-           <li>Gestion de projets globaux avec une équipe internationale</li>
-           <li>Positionnement stratégique et branding</li>
-         </ul>`
+
+  "Global Operations": {
+    en: `
+      <h2>BRASA — Global Operations</h2>
+      <ul>
+        <li>Managed global projects and international teams across multiple time zones</li>
+        <li>Led strategic initiatives to optimize operations and strengthen partnerships</li>
+        <li>Redesigned digital interfaces and created communication & partnership kits</li>
+        <li>Enhanced company growth, stakeholder engagement, and operational efficiency</li>
+      </ul>
+    `,
+    fr: `
+      <h2>BRASA — Opérations Globales</h2>
+      <ul>
+        <li>Gestion de projets globaux avec des équipes internationales sur plusieurs fuseaux horaires</li>
+        <li>Conduite d’initiatives stratégiques pour optimiser les opérations et renforcer les partenariats</li>
+        <li>Refonte des interfaces digitales et création de kits communication & partenariats</li>
+        <li>Amélioration de la croissance, de l’engagement des parties prenantes et de l’efficacité opérationnelle</li>
+      </ul>
+    `
   },
-  pepsico: {
-    en: `<h2>PepsiCo — Data Analysis & Logistics Project</h2>
-         <p><em>USA · 2023</em></p>
-         <ul>
-           <li>Analyzed national supply chain data using SQL & Excel</li>
-           <li>Mapped operational processes and flows</li>
-           <li>Proposed decarbonization strategy for logistics fleet</li>
-         </ul>`,
-    fr: `<h2>PepsiCo — Analyse des données & logistique</h2>
-         <p><em>USA · 2023</em></p>
-         <ul>
-           <li>Analyse de la chaîne logistique nationale (SQL & Excel)</li>
-           <li>Cartographie des processus opérationnels</li>
-           <li>Proposition d’un plan de décarbonation pour la flotte logistique</li>
-         </ul>`
+
+  "Data & Logistics": {
+    en: `
+      <h2>PepsiCo — Data & Logistics Analysis</h2>
+      <ul>
+        <li>Analyzed national supply chain data to optimize operations</li>
+        <li>Mapped operational flows and proposed improvements for efficiency</li>
+        <li>Developed actionable insights for fleet management and logistics planning</li>
+      </ul>
+    `,
+    fr: `
+      <h2>PepsiCo — Analyse des données & logistique</h2>
+      <ul>
+        <li>Analyse des données supply chain pour optimiser les opérations</li>
+        <li>Cartographie des flux opérationnels et propositions d’amélioration de l’efficacité</li>
+        <li>Développement de recommandations opérationnelles pour la gestion des flottes et la planification logistique</li>
+      </ul>
+    `
   },
-  btg: {
-    en: `<h2>BTG Pactual — Summer Analyst</h2>
-         <p><em>Brazil · 2021–2022</em></p>
-         <ul>
-           <li>Analyzed financial markets and credit operations</li>
-           <li>Supported investment & risk analysis</li>
-           <li>Worked within Latin America’s largest investment bank</li>
-         </ul>`,
-    fr: `<h2>BTG Pactual — Summer Analyst</h2>
-         <p><em>Brésil · 2021–2022</em></p>
-         <ul>
-           <li>Analyse des marchés financiers et opérations de crédit</li>
-           <li>Support à l’investissement et analyse du risque</li>
-           <li>Travail au sein de la plus grande banque d’investissement d’Amérique Latine</li>
-         </ul>`
-  },
-  // Similarly add bilingual content for safra, kpi, arena, purdue, mediaset, cad, iypt
-  Safran: { en:`<h2>Safran — Supply Chain Optimization</h2><ul><li>Industrial supply chain use cases</li><li>Reduced turnaround time ~40%</li></ul>`, fr:`<h2>Safran — Optimisation de la chaîne logistique</h2><ul><li>Cas d’usage chaîne logistique industrielle</li><li>Réduction du temps de traitement ~40%</li></ul>` },
-KPIs: { en:`<h2>KPI Analytics Project</h2><ul><li>KPI dashboards for 9+ customers</li></ul>`, fr:`<h2>Projet KPI Analytics</h2><ul><li>Dashboards KPI pour 9+ clients</li></ul>` },
-  Arena: { en:`<h2>Industry 4.0 — Arena Simulation</h2><ul><li>Optimized performance 750→468</li></ul>`, fr:`<h2>Industry 4.0 — Simulation Arena</h2><ul><li>Optimisation performance 750→468</li></ul>` },
-  Purdue: { en:`<h2>Purdue Engineering Computing Project</h2><ul><li>Stock-market simulation game</li></ul>`, fr:`<h2>Projet Purdue Engineering Computing</h2><ul><li>Jeu de simulation boursière</li></ul>` },
-  Mediaset: { en:`<h2>Mediaset Innovation</h2><ul><li>Platform & UX redesign</li></ul>`, fr:`<h2>Innovation Mediaset</h2><ul><li>Refonte plateforme & UX</li></ul>` },
-  CAD: { en:`<h2>CAD Engineering</h2><ul><li>AutoCAD · CATIA portfolio</li></ul>`, fr:`<h2>Ingénierie CAO</h2><ul><li>Portfolio AutoCAD · CATIA</li></ul>` },
-  IYPT: { en:`<h2>IYPT — Team Leader</h2><ul><li>National bronze medal</li></ul>`, fr:`<h2>IYPT — Chef d’équipe</h2><ul><li>Médaille de bronze nationale</li></ul>` }
+
+  "Safran Supply Chain": {
+    en: `
+      <h2>Safran — Supply Chain Optimization</h2>
+      <ul>
+        <li>Worked with Safran Aerospace, Defense, and Electronics in France and Singapore</li>
+        <li>Optimized operational data to improve supply chain efficiency</li>
+        <li>Reduced MRO turnaround time by 40%</li>
+        <li>Customized SaaS platform and supported client onboarding and data analysis</li>
+      </ul>
+    `,
+    fr: `
+      <h2>Safran — Optimisation de la Supply Chain</h2>
+      <ul>
+        <li>Collaboration avec Safran Aéronautique, Défense et Électronique en France et à Singapour</li>
+        <li>Optimisation des données opérationnelles pour améliorer l’efficacité de la supply chain</li>
+        <li>Réduction de 40 % du temps de traitement MRO</li>
+        <li>Personnalisation de la plateforme SaaS et accompagnement des clients pour l’onboarding et l’analyse des données</li>
+      </ul>
+    `
+  }
+  // keep other projects like arena, purdue, mediaset, cad, iypt similar to previous snippet
 };
+</script>
+
 
 const modal = document.getElementById("project-modal");
 const modalText = document.getElementById("modal-text");
