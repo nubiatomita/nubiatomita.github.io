@@ -78,6 +78,16 @@
       border-radius: 20px;
       padding: 26px 22px;
       box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      margin-bottom: 16px;
     }
 
     .location {
@@ -113,6 +123,7 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 8px;
       margin-bottom: 24px;
     }
@@ -130,6 +141,7 @@
       grid-template-columns: 1fr;
       gap: 12px;
       margin-bottom: 28px;
+      justify-items: center;
     }
 
     .action {
@@ -145,6 +157,8 @@
       color: white;
       font-weight: 500;
       transition: transform 0.15s ease, background 0.15s ease;
+      width: 200px;
+      text-align: center;
     }
 
     .action span {
@@ -171,6 +185,7 @@
     .description {
       font-size: 14px;
       max-width: 720px;
+      margin: 0 auto;
     }
 
     @media (min-width: 768px) {
@@ -204,6 +219,9 @@
     </div>
 
     <div class="card">
+
+      <!-- Profile picture -->
+      <img src="Nubia_picture.jpg" alt="Nubia Tomita" class="profile-pic" />
 
       <div class="location">Paris</div>
 
@@ -241,14 +259,14 @@
           <span data-en="Send a message" data-fr="Envoyer un message">Send a message</span>
         </a>
 
-        <a class="action" href="cv-en.pdf" target="_blank">
-          CV 
-          <span data-en="Download CV" data-fr="Télécharger CV">Download English CV</span>
+        <a class="action" href="CV_EN.docx.pdf" target="_blank">
+          CV (EN)
+          <span data-en="Download English CV" data-fr="Télécharger CV anglais">Download English CV</span>
         </a>
 
-        <a class="action" href="cv-fr.pdf" target="_blank">
-          CV 
-          <span data-en="Download CV" data-fr="Télécharger CV">Download French CV</span>
+        <a class="action" href="CV_FR.docx.pdf" target="_blank">
+          CV (FR)
+          <span data-en="Download French CV" data-fr="Télécharger CV français">Download French CV</span>
         </a>
 
         <a class="action" href="https://wa.me/330652400841" target="_blank">
