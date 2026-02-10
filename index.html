@@ -45,27 +45,28 @@
       margin-bottom: 14px;
     }
 
-     .lang-toggle button {
-      background: rgba(30, 64, 175, 0.3); /* subtle semi-transparent blue */
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      cursor: pointer;
-      backdrop-filter: blur(8px); /* glass effect */
-      transition: background 0.2s ease, transform 0.15s ease;
-    }
+    .lang-toggle button {
+  background: rgba(30, 64, 175, 0.35); /* slightly stronger blue */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 8px 16px; /* bigger buttons */
+  border-radius: 999px;
+  font-size: 14px; /* larger text */
+  font-weight: 600; /* more prominent */
+  cursor: pointer;
+  backdrop-filter: blur(10px); /* more pronounced glass effect */
+  transition: background 0.2s ease, transform 0.15s ease;
+}
 
-    .lang-toggle button:hover {
-      background: rgba(30, 64, 175, 0.5);
-      transform: translateY(-1px);
-    }
+.lang-toggle button:hover {
+  background: rgba(30, 64, 175, 0.6); /* stronger hover highlight */
+  transform: translateY(-2px); /* more noticeable lift */
+}
 
-    .lang-toggle button.active {
-      background: rgba(30, 64, 175, 0.7); /* more visible for active */
-      border-color: white;
-    }
+.lang-toggle button.active {
+  background: rgba(30, 64, 175, 0.85); /* very visible active state */
+  border-color: white;
+}
 
     .card {
       background: linear-gradient(
