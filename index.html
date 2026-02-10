@@ -395,5 +395,135 @@
   }
 </script>
 
+    <script>
+  // ===== PROJECT CONTENTS =====
+  const projects = {
+    safran: {
+      en: `
+        <h2>Safran Supply Chain Optimization</h2>
+        <p>Worked on a customized solution for aerospace maintenance, repair, and overhaul optimization. Developed strategies that reduced turnaround time by 40%, improving operational efficiency and workflow coordination.</p>
+      `,
+      fr: `
+        <h2>Optimisation de la chaîne d'approvisionnement Safran</h2>
+        <p>Travail sur une solution personnalisée pour l'optimisation de la maintenance, réparation et révision aéronautique. Développement de stratégies ayant réduit le temps de cycle de 40%, améliorant l'efficacité opérationnelle et la coordination des flux.</p>
+      `
+    },
+    kpi: {
+      en: `
+        <h2>KPI Analysis for Customers</h2>
+        <p>Managed documentation and KPI data analysis for 9+ clients using Excel and SQL. Delivered actionable insights to improve client operations and reporting accuracy.</p>
+      `,
+      fr: `
+        <h2>Analyse des KPI pour les clients</h2>
+        <p>Gestion de la documentation et analyse des KPI pour plus de 9 clients avec Excel et SQL. Fourniture d'insights exploitables pour améliorer les opérations et la précision des rapports.</p>
+      `
+    },
+    arena: {
+      en: `
+        <h2>Industry 4.0 - Arena Factory Simulation Optimization</h2>
+        <ul>
+          <li>Analyzed simulation models and performance metrics.</li>
+          <li>Optimized layout, inventory ordering, machine selection, and job scheduling.</li>
+          <li>Improved overall performance rating from 750 to 468 using heuristics and data-driven analysis.</li>
+        </ul>
+      `,
+      fr: `
+        <h2>Industrie 4.0 - Optimisation de la simulation Arena Factory</h2>
+        <ul>
+          <li>Analyse des modèles de simulation et des indicateurs de performance.</li>
+          <li>Optimisation de la disposition, des commandes d'inventaire, du choix des machines et de la planification des tâches.</li>
+          <li>Amélioration de la note de performance globale de 750 à 468 grâce à des méthodes heuristiques et une analyse basée sur les données.</li>
+        </ul>
+      `
+    },
+    purdue: {
+      en: `
+        <h2>Purdue Engineering Computing Project</h2>
+        <ul>
+          <li>Developed a stock market game website with a team of seven engineers.</li>
+          <li>Created a business plan and implemented the site using HTML, PHP, CSS, SQL, and R.</li>
+        </ul>
+      `,
+      fr: `
+        <h2>Projet Purdue Engineering Computing</h2>
+        <ul>
+          <li>Développement d'un site web jeu sur le marché boursier avec une équipe de sept ingénieurs.</li>
+          <li>Création d'un plan d'affaires et implémentation du site en HTML, PHP, CSS, SQL et R.</li>
+        </ul>
+      `
+    },
+    mediaset: {
+      en: `
+        <h2>Mediaset Leadership and Innovation Project</h2>
+        <p>Designed a new online platform for the company, implementing marketing strategies and improving usability for a better user experience.</p>
+      `,
+      fr: `
+        <h2>Projet Leadership et Innovation Mediaset</h2>
+        <p>Conception d'une nouvelle plateforme en ligne, mise en œuvre de stratégies marketing et amélioration de l'expérience utilisateur.</p>
+      `
+    },
+    cad: {
+      en: `
+        <h2>Computer-Aided Design Engineering Project</h2>
+        <p>Engineering and technical graphics portfolio available <a href="https://portfoliocgt163.wordpress.com/info/" target="_blank">here</a>. Skills: AutoCAD, CATIA.</p>
+      `,
+      fr: `
+        <h2>Projet Conception Assistée par Ordinateur</h2>
+        <p>Portfolio en ingénierie et graphisme technique disponible <a href="https://portfoliocgt163.wordpress.com/info/" target="_blank">ici</a>. Compétences : AutoCAD, CATIA.</p>
+      `
+    },
+    iypt: {
+      en: `
+        <h2>International Young Physicists’ Tournament – Team Leader</h2>
+        <ul>
+          <li>Led a team of five to solve complex physics problems not yet fully understood by the scientific community.</li>
+          <li>Coordinated research, wrote reports, and presented solutions to top scientists and professors.</li>
+          <li>Awarded top bronze medal nationally.</li>
+        </ul>
+      `,
+      fr: `
+        <h2>Tournée Internationale des Jeunes Physiciens – Chef d'équipe</h2>
+        <ul>
+          <li>Encadrement d'une équipe de cinq pour résoudre des problèmes de physique complexes encore non compris par la communauté scientifique.</li>
+          <li>Coordination de la recherche, rédaction de rapports et présentation des solutions à des scientifiques et professeurs de haut niveau.</li>
+          <li>Médaille de bronze nationale obtenue.</li>
+        </ul>
+      `
+    }
+  };
+
+  // ===== MODAL FUNCTIONALITY =====
+  const modal = document.getElementById('project-modal');
+  const modalText = document.getElementById('modal-text');
+  const closeBtn = document.querySelector('.close-btn');
+
+  // Open modal with project content
+  document.querySelectorAll('.project-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const projectKey = btn.getAttribute('data-project');
+      const lang = document.documentElement.lang || 'en';
+      modalText.innerHTML = projects[projectKey][lang];
+      modal.style.display = 'flex';
+      // Blur background
+      document.querySelector('.wrapper').style.filter = 'blur(4px)';
+    });
+  });
+
+  // Close modal when clicking X
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.querySelector('.wrapper').style.filter = 'none';
+  });
+
+  // Optional: close modal when clicking outside content
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) {
+      modal.style.display = 'none';
+      document.querySelector('.wrapper').style.filter = 'none';
+    }
+  });
+</script>
+
+
 </body>
 </html>
