@@ -7,7 +7,7 @@
 
 <style>
 :root {
-  --bg: #08142f; 
+  --bg: #08142f; /* slightly more blue */
   --bg-accent: #0b1f4a;
   --card: rgba(15, 23, 42, 0.7);
   --border: rgba(255,255,255,0.08);
@@ -23,7 +23,8 @@
 body {
   margin: 0;
   padding: 24px 16px;
-  background: radial-gradient(1000px 600px at 15% 0%, var(--bg-accent), var(--bg));
+  background:
+    radial-gradient(1000px 600px at 15% 0%, var(--bg-accent), var(--bg));
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
   line-height: 1.55;
@@ -194,6 +195,7 @@ h1 { margin: 8px 0; font-size: 32px; }
 Consulting · SaaS · Digital Transformation · Data Analysis
 </div>
 
+<!-- EDUCATION -->
 <div class="headline"
 data-en='Education: Industrial Engineering in the USA: <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> and Italy: <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.'
 data-fr='Formation: Ingénierie industrielle aux États-Unis : <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> et en Italie : <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.'>
@@ -222,22 +224,22 @@ and Italy:
 <!-- EXPERIENCE -->
 <div class="section-title">Experience</div>
 <div class="projects">
-<button class="project-btn" data-project="pelico">Pelico · SaaS Operations</button>
-<button class="project-btn" data-project="brasa">BRASA · Marketing Ops</button>
-<button class="project-btn" data-project="pepsico">PepsiCo · Logistics</button>
-<button class="project-btn" data-project="btg">BTG Pactual · Finance</button>
+<button class="project-btn" data-project="SaaS B2B Operations">SaaS B2B Operations</button>
+<button class="project-btn" data-project="Global Operations">Global Operations</button>
+<button class="project-btn" data-project="Data & Logistics">Data & Logistics</button>
+<button class="project-btn" data-project="BTG Pactual">BTG Pactual</button>
 </div>
 
 <!-- PROJECTS -->
 <div class="section-title">Projects</div>
 <div class="projects">
-<button class="project-btn" data-project="safran">Safran Supply Chain</button>
-<button class="project-btn" data-project="kpi">KPI Analytics</button>
-<button class="project-btn" data-project="arena">Industry 4.0 Simulation</button>
-<button class="project-btn" data-project="purdue">Purdue Engineering Computing</button>
-<button class="project-btn" data-project="mediaset">Mediaset Innovation</button>
-<button class="project-btn" data-project="cad">CAD Engineering</button>
-<button class="project-btn" data-project="iypt">IYPT Leadership</button>
+<button class="project-btn" data-project="Safran Supply Chain">Safran Supply Chain</button>
+<button class="project-btn" data-project="KPI Analytics">KPI Analytics</button>
+<button class="project-btn" data-project="Arena Factory Simulation">Industry 4.0 Simulation</button>
+<button class="project-btn" data-project="Purdue Computing">Purdue Engineering Computing</button>
+<button class="project-btn" data-project="Mediaset Innovation">Mediaset Innovation</button>
+<button class="project-btn" data-project="CAD Engineering">CAD Engineering</button>
+<button class="project-btn" data-project="IYPT">IYPT Leadership</button>
 </div>
 
 <div id="project-modal" class="modal">
@@ -246,9 +248,6 @@ and Italy:
 <div id="modal-text"></div>
 </div>
 </div>
-
-<script>
-let currentLang = "en"; // default language
 
 <script>
 const content = {
@@ -262,8 +261,7 @@ const content = {
         <li><strong>Cross-Functional Collaboration & Continuous Improvement:</strong> Worked with Product, Data, and Customer Success teams to resolve client issues, boost retention and adoption, and propose data-driven process optimizations.</li>
         <li><strong>Customer Support:</strong> Structured internal CRM and ticketing tool usage (HubSpot, Notion, Linear) and proposed optimizations to enhance data visibility and response times.</li>
         <li><strong>Scalability:</strong> Provided functional support during critical deployment phases, contributed to automating implementation cycles, and improved internal efficiency through iterative process improvement.</li>
-      </ul>
-    `,
+      </ul>`,
     fr: `
       <h2>Pelico — Onboarding Clients & Opérations SaaS</h2>
       <ul>
@@ -273,96 +271,77 @@ const content = {
         <li><strong>Collaboration Interfonctionnelle & Amélioration Continue:</strong> Travail avec les équipes Produit, Data et Customer Success pour résoudre les problèmes clients, améliorer la rétention et proposer des optimisations basées sur les données terrain.</li>
         <li><strong>Support Client:</strong> Structuration des outils CRM et ticketing (HubSpot, Notion, Linear) et proposition d’optimisations pour améliorer la visibilité et la réactivité.</li>
         <li><strong>Scalabilité:</strong> Support fonctionnel lors des déploiements critiques, contribution à l’automatisation des cycles d’implémentation et amélioration de l’efficacité interne par itérations.</li>
-      </ul>
-    `
+      </ul>`
   },
 
   "Global Operations": {
-    en: `
-      <h2>BRASA — Global Operations</h2>
-      <ul>
+    en: `<h2>BRASA — Global Operations</h2><ul>
         <li>Managed global projects and international teams across multiple time zones</li>
         <li>Led strategic initiatives to optimize operations and strengthen partnerships</li>
         <li>Redesigned digital interfaces and created communication & partnership kits</li>
         <li>Enhanced company growth, stakeholder engagement, and operational efficiency</li>
-      </ul>
-    `,
-    fr: `
-      <h2>BRASA — Opérations Globales</h2>
-      <ul>
+      </ul>`,
+    fr: `<h2>BRASA — Opérations Globales</h2><ul>
         <li>Gestion de projets globaux avec des équipes internationales sur plusieurs fuseaux horaires</li>
         <li>Conduite d’initiatives stratégiques pour optimiser les opérations et renforcer les partenariats</li>
         <li>Refonte des interfaces digitales et création de kits communication & partenariats</li>
         <li>Amélioration de la croissance, de l’engagement des parties prenantes et de l’efficacité opérationnelle</li>
-      </ul>
-    `
+      </ul>`
   },
 
   "Data & Logistics": {
-    en: `
-      <h2>PepsiCo — Data & Logistics Analysis</h2>
-      <ul>
+    en: `<h2>PepsiCo — Data & Logistics Analysis</h2><ul>
         <li>Analyzed national supply chain data to optimize operations</li>
         <li>Mapped operational flows and proposed improvements for efficiency</li>
         <li>Developed actionable insights for fleet management and logistics planning</li>
-      </ul>
-    `,
-    fr: `
-      <h2>PepsiCo — Analyse des données & logistique</h2>
-      <ul>
+      </ul>`,
+    fr: `<h2>PepsiCo — Analyse des données & logistique</h2><ul>
         <li>Analyse des données supply chain pour optimiser les opérations</li>
         <li>Cartographie des flux opérationnels et propositions d’amélioration de l’efficacité</li>
         <li>Développement de recommandations opérationnelles pour la gestion des flottes et la planification logistique</li>
-      </ul>
-    `
+      </ul>`
   },
 
   "Safran Supply Chain": {
-    en: `
-      <h2>Safran — Supply Chain Optimization</h2>
-      <ul>
+    en: `<h2>Safran — Supply Chain Optimization</h2><ul>
         <li>Worked with Safran Aerospace, Defense, and Electronics in France and Singapore</li>
         <li>Optimized operational data to improve supply chain efficiency</li>
         <li>Reduced MRO turnaround time by 40%</li>
         <li>Customized SaaS platform and supported client onboarding and data analysis</li>
-      </ul>
-    `,
-    fr: `
-      <h2>Safran — Optimisation de la Supply Chain</h2>
-      <ul>
+      </ul>`,
+    fr: `<h2>Safran — Optimisation de la Supply Chain</h2><ul>
         <li>Collaboration avec Safran Aéronautique, Défense et Électronique en France et à Singapour</li>
         <li>Optimisation des données opérationnelles pour améliorer l’efficacité de la supply chain</li>
         <li>Réduction de 40 % du temps de traitement MRO</li>
         <li>Personnalisation de la plateforme SaaS et accompagnement des clients pour l’onboarding et l’analyse des données</li>
-      </ul>
-    `
-  }
-  // keep other projects like arena, purdue, mediaset, cad, iypt similar to previous snippet
-};
-</script>
+      </ul>`
+  },
 
+  // Keep Arena, Purdue, Mediaset, CAD, IYPT similar to previous snippet...
+};
 
 const modal = document.getElementById("project-modal");
 const modalText = document.getElementById("modal-text");
+let currentLang = 'en';
+
+document.querySelectorAll(".lang-toggle button").forEach(btn => {
+  btn.onclick = () => {
+    currentLang = btn.textContent.includes('EN') ? 'en' : 'fr';
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  };
+});
 
 document.querySelectorAll(".project-btn").forEach(b => {
   b.onclick = () => {
-    modalText.innerHTML = content[b.dataset.project][currentLang];
+    const project = b.dataset.project;
+    modalText.innerHTML = content[project][currentLang];
     modal.style.display = "block";
   };
 });
 
 document.querySelector(".close-btn").onclick = () => modal.style.display = "none";
 modal.onclick = e => { if(e.target === modal) modal.style.display = "none"; };
-
-// Language toggle buttons
-document.querySelectorAll(".lang-toggle button").forEach(btn => {
-  btn.onclick = () => {
-    currentLang = btn.textContent.includes("FR") ? "fr" : "en";
-    document.querySelectorAll(".lang-toggle button").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-  };
-});
 </script>
 
 </div>
