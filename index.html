@@ -12,32 +12,23 @@
       --border: rgba(255,255,255,0.08);
       --text: #e5e7eb;
       --muted: #9ca3af;
-
-      /* Subtle blue buttons */
       --btn: #1b2d5c;
       --btn-hover: #1e40af;
-
       --tag-bg: rgba(255,255,255,0.06);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       padding: 24px 16px;
       background: radial-gradient(1200px 600px at 20% 0%, #111827, var(--bg));
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Inter",
-                   "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
       line-height: 1.55;
     }
 
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-    }
+    .wrapper { max-width: 960px; margin: 0 auto; }
 
     .topbar {
       display: flex;
@@ -46,37 +37,31 @@
     }
 
     .lang-toggle button {
-  background: rgba(30, 64, 175, 0.35); /* slightly stronger blue */
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: white;
-  padding: 8px 16px; /* bigger buttons */
-  border-radius: 999px;
-  font-size: 14px; /* larger text */
-  font-weight: 600; /* more prominent */
-  cursor: pointer;
-  backdrop-filter: blur(10px); /* more pronounced glass effect */
-  transition: background 0.2s ease, transform 0.15s ease;
-}
+      background: rgba(30, 64, 175, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
 
-.lang-toggle button:hover {
-  background: rgba(30, 64, 175, 0.6); /* stronger hover highlight */
-  transform: translateY(-2px); /* more noticeable lift */
-}
+    .lang-toggle button:hover {
+      background: rgba(30, 64, 175, 0.6);
+      transform: translateY(-2px);
+    }
 
-.lang-toggle button.active {
-  background: rgba(30, 64, 175, 0.85); /* very visible active state */
-  border-color: white;
-}
+    .lang-toggle button.active {
+      background: rgba(30, 64, 175, 0.85);
+      border-color: white;
+    }
 
     .card {
-      background: linear-gradient(
-                  180deg,
-                  rgba(255,255,255,0.06),
-                  rgba(255,255,255,0.02)
-                ),
-                var(--card);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)), var(--card);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 26px 22px;
@@ -101,26 +86,12 @@
       margin-bottom: 8px;
     }
 
-    h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin: 0 0 6px 0;
-    }
+    h1 { font-size: 28px; font-weight: 600; margin: 0 0 6px 0; }
 
     .subtitle {
       font-size: 14px;
       color: var(--muted);
       margin-bottom: 14px;
-    }
-
-    .headline {
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .headline a {
-      color: #3b82f6;
-      text-decoration: underline;
     }
 
     .tags {
@@ -149,12 +120,7 @@
 
     .action {
       padding: 16px 18px;
-      background: linear-gradient(
-                    180deg,
-                    rgba(255,255,255,0.08),
-                    rgba(255,255,255,0.02)
-                  ),
-                  var(--btn);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)), var(--btn);
       border-radius: 14px;
       text-decoration: none;
       color: white;
@@ -182,96 +148,71 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 10px;
+      margin: 26px 0 10px;
+      text-align: center;
     }
 
-    .description {
-      font-size: 14px;
-      max-width: 720px;
-      margin: 0 auto;
+    .projects { text-align: center; }
+
+    .project-btn {
+      background: rgba(30,64,175,0.3);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 12px;
+      margin: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .project-btn:hover {
+      background: rgba(30,64,175,0.6);
+      transform: translateY(-1px);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0f172a;
+      padding: 24px;
+      border-radius: 16px 16px 0 0;
+      width: 90%;
+      max-width: 800px;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 28px;
+      cursor: pointer;
     }
 
     @media (min-width: 768px) {
-      body {
-        padding: 40px 24px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .card {
-        padding: 36px;
-      }
-
-      .actions {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      h1 { font-size: 34px; }
+      .actions { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 36px; }
     }
-    /* Modal overlay */
-.modal {
-  display: none; /* hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto;
-}
-
-/* Modal content */
-.modal-content {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #0f172a;
-  color: white;
-  padding: 24px;
-  border-radius: 16px 16px 0 0;
-  width: 90%;
-  max-width: 800px;
-  max-height: 80%;
-  overflow-y: auto;
-  box-shadow: 0 -5px 25px rgba(0,0,0,0.7);
-}
-
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: white;
-}
-
-.project-btn {
-  background: rgba(30,64,175,0.3);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 12px;
-  margin: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
-}
-.project-btn:hover {
-  background: rgba(30,64,175,0.6);
-  transform: translateY(-1px);
-}
-
   </style>
 </head>
 
 <body>
-  <div class="wrapper">
+<div class="wrapper">
 
-  <div class="topbar">
+<div class="topbar">
   <div class="lang-toggle">
     <button id="btn-en" class="active" onclick="setLang('en')">🇺🇸 EN</button>
     <button id="btn-fr" onclick="setLang('fr')">🇫🇷 FR</button>
@@ -279,94 +220,46 @@
 </div>
 
 <div class="card">
-
-  <!-- Profile picture -->
-  <img src="Nubia_picture.jpg" alt="Nubia Tomita" class="profile-pic" />
-
+  <img src="Nubia_picture.jpg" class="profile-pic" />
   <div class="location">Paris</div>
-
   <h1>Nubia Tomita</h1>
-  <div class="subtitle" data-en="Consulting · SaaS · Digital Transformation · Data Analysis"
-       data-fr="Conseil · SaaS · Transformation digitale · Analyse de données">
-    Consulting · SaaS · Digital Transformation · Data Analysis
-  </div>
 
-  <div class="headline"
-       data-en="I support consulting and SaaS initiatives across product onboarding, operations, and digital transformation, with a strong focus on execution and impact."
-       data-fr="J’accompagne des projets de conseil et SaaS, de l’onboarding produit à la transformation digitale, avec un fort focus sur l’exécution et l’impact.">
-    I support consulting and SaaS initiatives across product onboarding, operations, and digital transformation, with a strong focus on execution and impact.
-  </div>
-
-  <!-- Separate Education section -->
-  <div class="headline"
-       data-en='Education: Industrial Engineering in the USA: <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> and Italy: <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.'
-       data-fr='Formation: Ingénierie industrielle aux États-Unis : <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> et en Italie : <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.'>
-    Education: Industrial Engineering in the USA: <a href="https://engineering.purdue.edu/IE/news/2025/undergraduate_program_ranking" target="_blank">Purdue University</a> and Italy: <a href="https://www.polimi.it/en/" target="_blank">Politecnico di Milano</a>.
+  <div class="subtitle"
+    data-en="Consulting · SaaS · Digital Transformation · Data Analysis"
+    data-fr="Conseil · SaaS · Transformation digitale · Analyse de données">
   </div>
 
   <div class="tags">
     <div class="tag">SaaS</div>
     <div class="tag">Customer Success</div>
-    <div class="tag" data-en="Change Management" data-fr="Conduite du changement">
-      Change Management
-    </div>
+    <div class="tag">Change Management</div>
     <div class="tag">Data & Ops</div>
     <div class="tag">AI-enabled products</div>
-    <div class="tag">Data Analysis</div>
   </div>
 
   <div class="actions">
-    <a class="action" href="https://www.linkedin.com/in/missnubia" target="_blank">
-      🔗 LinkedIn
-      <span data-en="Connect with me" data-fr="Se connecter">Connect with me</span>
-    </a>
-
-    <a class="action" href="mailto:nubiatomita@gmail.com">
-      ✉️ Email
-      <span data-en="Send a message" data-fr="Envoyer un message">Send a message</span>
-    </a>
-
-    <a class="action" id="cv-button" href="CV_EN.docx.pdf" target="_blank">
-      📄 CV
-      <span data-en="Download CV" data-fr="Télécharger CV">Download CV</span>
-    </a>
-
-    <a class="action" href="https://wa.me/330652400841" target="_blank">
-      💬 WhatsApp
-      <span data-en="Message me directly" data-fr="Envoyez-moi un message">Message me directly</span>
-    </a>
+    <a class="action" href="https://www.linkedin.com/in/missnubia" target="_blank">🔗 LinkedIn</a>
+    <a class="action" href="mailto:nubiatomita@gmail.com">✉️ Email</a>
+    <a class="action" id="cv-button" href="CV_EN.docx.pdf" target="_blank">📄 CV</a>
+    <a class="action" href="https://wa.me/330652400841" target="_blank">💬 WhatsApp</a>
   </div>
-
-</div> <!-- closes .card -->
-
-<!-- ======= PROJECTS SECTION ======= -->
-<div class="section-title" data-en="Projects" data-fr="Projets">Projects</div>
-
-<div class="projects">
-  <button class="project-btn" data-project="safran">
-    Safran Supply Chain Optimization
-  </button>
-  <button class="project-btn" data-project="kpi">
-    KPI Analysis for Customers
-  </button>
-  <button class="project-btn" data-project="arena">
-    Industry 4.0 - Arena Factory Simulation
-  </button>
-  <button class="project-btn" data-project="purdue">
-    Purdue Engineering Computing Project
-  </button>
-  <button class="project-btn" data-project="mediaset">
-    Mediaset Leadership and Innovation
-  </button>
-  <button class="project-btn" data-project="cad">
-    Computer-Aided Design Engineering
-  </button>
-  <button class="project-btn" data-project="iypt">
-    International Young Physicists’ Tournament
-  </button>
 </div>
 
-<!-- Modal Overlay -->
+<div class="section-title" data-en="Experience" data-fr="Expérience"></div>
+<div class="projects">
+  <button class="project-btn" data-project="pelico">Pelico · Customer Operations</button>
+  <button class="project-btn" data-project="brasa">BRASA · Marketing Ops</button>
+  <button class="project-btn" data-project="pepsico">PepsiCo · Logistics</button>
+  <button class="project-btn" data-project="btg">BTG Pactual · Finance</button>
+</div>
+
+<div class="section-title" data-en="Projects" data-fr="Projets"></div>
+<div class="projects">
+  <button class="project-btn" data-project="safran">Safran Supply Chain</button>
+  <button class="project-btn" data-project="arena">Industry 4.0 Simulation</button>
+  <button class="project-btn" data-project="iypt">IYPT Leadership</button>
+</div>
+
 <div id="project-modal" class="modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
@@ -375,152 +268,35 @@
 </div>
 
 <script>
-  function setLang(lang) {
-    // Change all text elements based on language
-    document.querySelectorAll('[data-en]').forEach(el => {
-      el.innerHTML = el.getAttribute(`data-${lang}`);
-    });
+const projects = {
+  pelico:{en:`<h2>Pelico</h2><ul><li>Led SaaS onboarding for industrial clients</li><li>Built KPIs & dashboards</li></ul>`,
+          fr:`<h2>Pelico</h2><ul><li>Onboarding clients industriels SaaS</li><li>Création de KPIs</li></ul>`},
+  brasa:{en:`<h2>BRASA</h2><ul><li>Global marketing ops</li></ul>`,
+         fr:`<h2>BRASA</h2><ul><li>Marketing opérations globales</li></ul>`},
+  pepsico:{en:`<h2>PepsiCo</h2><p>SQL & logistics analysis</p>`,
+           fr:`<h2>PepsiCo</h2><p>Analyse logistique SQL</p>`},
+  btg:{en:`<h2>BTG Pactual</h2><p>Investment banking analysis</p>`,
+       fr:`<h2>BTG Pactual</h2><p>Analyse finance</p>`},
+  safran:{en:`<h2>Safran</h2><p>Supply chain optimization</p>`,
+          fr:`<h2>Safran</h2><p>Optimisation supply chain</p>`},
+  arena:{en:`<h2>Arena Simulation</h2><p>Industry 4.0 factory</p>`,
+         fr:`<h2>Arena</h2><p>Simulation usine 4.0</p>`},
+  iypt:{en:`<h2>IYPT</h2><p>Team leadership & physics research</p>`,
+        fr:`<h2>IYPT</h2><p>Leadership scientifique</p>`}
+};
 
-    // Update the active language button style
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
-
-    // Update CV button link based on selected language
-    const cvButton = document.getElementById('cv-button');
-    if(lang === 'en') {
-      cvButton.href = "CV_EN.docx.pdf";  // English CV
-    } else {
-      cvButton.href = "CV_FR.docx.pdf";  // French CV
-    }
-  }
-</script>
-
- <script>
-  // ===== PROJECT CONTENTS =====
-  const projects = {
-    safran: {
-      en: `
-        <h2>Safran Supply Chain Optimization</h2>
-        <p>Worked on a customized solution for aerospace maintenance, repair, and overhaul optimization. Developed strategies that reduced turnaround time by 40%, improving operational efficiency and workflow coordination.</p>
-      `,
-      fr: `
-        <h2>Optimisation de la chaîne d'approvisionnement Safran</h2>
-        <p>Travail sur une solution personnalisée pour l'optimisation de la maintenance, réparation et révision aéronautique. Développement de stratégies ayant réduit le temps de cycle de 40%, améliorant l'efficacité opérationnelle et la coordination des flux.</p>
-      `
-    },
-    kpi: {
-      en: `
-        <h2>KPI Analysis for Customers</h2>
-        <p>Managed documentation and KPI data analysis for 9+ clients using Excel and SQL. Delivered actionable insights to improve client operations and reporting accuracy.</p>
-      `,
-      fr: `
-        <h2>Analyse des KPI pour les clients</h2>
-        <p>Gestion de la documentation et analyse des KPI pour plus de 9 clients avec Excel et SQL. Fourniture d'insights exploitables pour améliorer les opérations et la précision des rapports.</p>
-      `
-    },
-    arena: {
-      en: `
-        <h2>Industry 4.0 - Arena Factory Simulation Optimization</h2>
-        <ul>
-          <li>Analyzed simulation models and performance metrics.</li>
-          <li>Optimized layout, inventory ordering, machine selection, and job scheduling.</li>
-          <li>Improved overall performance rating from 750 to 468 using heuristics and data-driven analysis.</li>
-        </ul>
-      `,
-      fr: `
-        <h2>Industrie 4.0 - Optimisation de la simulation Arena Factory</h2>
-        <ul>
-          <li>Analyse des modèles de simulation et des indicateurs de performance.</li>
-          <li>Optimisation de la disposition, des commandes d'inventaire, du choix des machines et de la planification des tâches.</li>
-          <li>Amélioration de la note de performance globale de 750 à 468 grâce à des méthodes heuristiques et une analyse basée sur les données.</li>
-        </ul>
-      `
-    },
-    purdue: {
-      en: `
-        <h2>Purdue Engineering Computing Project</h2>
-        <ul>
-          <li>Developed a stock market game website with a team of seven engineers.</li>
-          <li>Created a business plan and implemented the site using HTML, PHP, CSS, SQL, and R.</li>
-        </ul>
-      `,
-      fr: `
-        <h2>Projet Purdue Engineering Computing</h2>
-        <ul>
-          <li>Développement d'un site web jeu sur le marché boursier avec une équipe de sept ingénieurs.</li>
-          <li>Création d'un plan d'affaires et implémentation du site en HTML, PHP, CSS, SQL et R.</li>
-        </ul>
-      `
-    },
-    mediaset: {
-      en: `
-        <h2>Mediaset Leadership and Innovation Project</h2>
-        <p>Designed a new online platform for the company, implementing marketing strategies and improving usability for a better user experience.</p>
-      `,
-      fr: `
-        <h2>Projet Leadership et Innovation Mediaset</h2>
-        <p>Conception d'une nouvelle plateforme en ligne, mise en œuvre de stratégies marketing et amélioration de l'expérience utilisateur.</p>
-      `
-    },
-    cad: {
-      en: `
-        <h2>Computer-Aided Design Engineering Project</h2>
-        <p>Engineering and technical graphics portfolio available <a href="https://portfoliocgt163.wordpress.com/info/" target="_blank">here</a>. Skills: AutoCAD, CATIA.</p>
-      `,
-      fr: `
-        <h2>Projet Conception Assistée par Ordinateur</h2>
-        <p>Portfolio en ingénierie et graphisme technique disponible <a href="https://portfoliocgt163.wordpress.com/info/" target="_blank">ici</a>. Compétences : AutoCAD, CATIA.</p>
-      `
-    },
-    iypt: {
-      en: `
-        <h2>International Young Physicists’ Tournament – Team Leader</h2>
-        <ul>
-          <li>Led a team of five to solve complex physics problems not yet fully understood by the scientific community.</li>
-          <li>Coordinated research, wrote reports, and presented solutions to top scientists and professors.</li>
-          <li>Awarded top bronze medal nationally.</li>
-        </ul>
-      `,
-      fr: `
-        <h2>Tournée Internationale des Jeunes Physiciens – Chef d'équipe</h2>
-        <ul>
-          <li>Encadrement d'une équipe de cinq pour résoudre des problèmes de physique complexes encore non compris par la communauté scientifique.</li>
-          <li>Coordination de la recherche, rédaction de rapports et présentation des solutions à des scientifiques et professeurs de haut niveau.</li>
-          <li>Médaille de bronze nationale obtenue.</li>
-        </ul>
-      `
-    }
+const modal=document.getElementById("project-modal");
+const modalText=document.getElementById("modal-text");
+document.querySelectorAll(".project-btn").forEach(btn=>{
+  btn.onclick=()=>{
+    modalText.innerHTML=projects[btn.dataset.project].en;
+    modal.style.display="block";
   };
-
-  // ===== MODAL FUNCTIONALITY =====
-  const modal = document.getElementById('project-modal');
-  const modalText = document.getElementById('modal-text');
-  const closeBtn = document.querySelector('.close-btn');
-
-  // Open modal with project content
-  document.querySelectorAll('.project-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const projectKey = btn.getAttribute('data-project');
-      const lang = document.documentElement.lang || 'en';
-      modalText.innerHTML = projects[projectKey][lang];
-      modal.style.display = 'flex';
-    });
-  });
-
-  // Close modal when clicking X
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Optional: close modal when clicking outside content
-  modal.addEventListener('click', (e) => {
-    if(e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
+});
+document.querySelector(".close-btn").onclick=()=>modal.style.display="none";
+modal.onclick=e=>{if(e.target===modal)modal.style.display="none";}
 </script>
 
-
-
+</div>
 </body>
 </html>
