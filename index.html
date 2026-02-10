@@ -45,23 +45,25 @@
       margin-bottom: 14px;
     }
 
-    .lang-toggle {
-      display: flex;
-      gap: 8px;
-    }
-
-    .lang-toggle button {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--muted);
+     .lang-toggle button {
+      background: rgba(30, 64, 175, 0.3); /* subtle semi-transparent blue */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
       padding: 6px 12px;
       border-radius: 999px;
       font-size: 12px;
       cursor: pointer;
+      backdrop-filter: blur(8px); /* glass effect */
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .lang-toggle button:hover {
+      background: rgba(30, 64, 175, 0.5);
+      transform: translateY(-1px);
     }
 
     .lang-toggle button.active {
-      color: white;
+      background: rgba(30, 64, 175, 0.7); /* more visible for active */
       border-color: white;
     }
 
