@@ -189,7 +189,13 @@ h1 { margin: 8px 0; font-size: 32px; }
 <div class="card">
 <img src="Nubia_picture.jpg" class="profile-pic">
 <div class="location">Paris</div>
-<h1>Nubia Tomita</h1>
+
+  <!-- Title - my name  -->
+  <h1 id="main-name"
+    data-en="Hi, I'm Nubia!"
+    data-fr="Salut, je suis Nubia !">
+  Hi, I'm Nubia!
+</h1>
 
 <div class="subtitle">
 Consulting · SaaS · Digital Transformation · Data Analysis
@@ -268,6 +274,8 @@ langButtons.forEach(btn => {
       document.title = currentLang === "en"
       ? "Hi, I'm Nubia!"
       : "Salut, je suis Nubia !";
+    document.getElementById("main-name").textContent =
+  document.getElementById("main-name").dataset[currentLang];
   };
 });
 
@@ -333,6 +341,18 @@ const content = {
         <li>Développement de recommandations opérationnelles pour la gestion des flottes et la planification logistique</li>
        </ul>`
 },
+
+  // PROJECTS
+  "KPI Analytics": {
+      en: `
+        <h2>KPI Analysis for Customers</h2>
+        <li>Managed documentation and KPI data analysis for 9+ clients using Excel and SQL. Delivered actionable insights to improve client operations and reporting accuracy.</p>
+      `,
+      fr: `
+        <h2>Analyse des KPI pour les clients</h2>
+        <li>Gestion de la documentation et analyse des KPI pour plus de 9 clients avec Excel et SQL. Fourniture d'insights exploitables pour améliorer les opérations et la précision des rapports.</p>
+      `
+    },
 
 "Safran Supply Chain": {
   en: `<h2>Safran — Supply Chain Optimization</h2>
