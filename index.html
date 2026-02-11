@@ -265,8 +265,9 @@ langButtons.forEach(btn => {
     // Update education text
     const headline = document.querySelector(".headline");
     headline.innerHTML = headline.dataset[currentLang];
-    document.getElementById("page-title").textContent =
-  currentLang === "en" ? "Hi, I'm Nubia!" : "Salut, je suis Nubia!";
+      document.title = currentLang === "en"
+      ? "Hi, I'm Nubia!"
+      : "Salut, je suis Nubia !";
   };
 });
 
